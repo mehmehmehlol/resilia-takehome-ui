@@ -18,6 +18,6 @@ to ensure all the npm packages of this repo is installed in your local machine.
 ```bash
 npm start
 ```
-Since the API have used up your local machine's default `localhost` port (ex: `localhost:3000`/`localhost:8000), it may ask you if you want to use another port. Simply type `y`.
+Since the API have used up your local machine's default `localhost` port (ex: `localhost:3000`/`localhost:8000`), it may ask you if you want to use another port. Simply type `y`.
 
 ## Screenshot
