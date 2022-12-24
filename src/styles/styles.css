@@ -42,52 +42,73 @@
 }
 
 .body {
-  /* border: 1px pink solid; */
   display: flex;
   justify-content: center;
   /* height: 80%; */
 }
 
 .notification-list {
-  /* border: 1px #12376d solid; */
   width: 80%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
 }
 
-.indiviudal-notification {
+.individual-notification {
+  display: inline-flex;
+  flex-direction: column;
   border: 1px #12376d solid;
   border-radius: 10px;
-  height: 200px;
-  width: 300px;
+  height: 225px;
+  width: 400px;
   margin: 10px;
-  padding: 10px;
+  /* padding: 5px; */
+  gap: 12px;
 }
 
-.indiviudal-notification > h1 {
+.individual-notification > h1 {
   font-size: 20px;
-  margin-top: 5px;
+  font-weight: 700;
+  margin: 5px 0 0 5px;
+  padding: 0px;
 }
 
-.indiviudal-notification:hover {
+.individual-notification > h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 0 5px;
+  padding: 0px;
+}
+
+.individual-notification > p {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0 0 0 5px;
+  padding: 0px;
+}
+
+.individual-notification:hover {
   border: 1px #ef4623 solid;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   transform: scale(1.05);
-  cursor: pointer;
 }
 
-.indiviudal-notification button {
+.individual-notification button {
+  width: 70%;
   padding: 13px 29px;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 5px;
   border: none;
   outline: none;
-  background: crimson;
+  background: #12376d;
   color: white;
   cursor: pointer;
+  margin: auto auto 10px auto;
+}
+
+.individual-notification button:hover {
+  background: #ef4623;
 }
 
 #portal .container {
@@ -105,15 +126,17 @@
 
 .container .modal {
   z-index: 1;
-  width: 350px;
-  height: 220px;
+  width: 30%;
+  height: 300px;
   background: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 5px;
   position: relative;
   animation: animate 0.3s;
+}
+
+.container-content {
+  margin: 10px;
 }
 
 .modal button {
@@ -121,13 +144,17 @@
   top: 7px;
   right: 7px;
   padding: 8px 11px;
-  background: crimson;
+  background: #12376d;
   color: white;
   font-weight: bold;
   border: none;
   outline: none;
   border-radius: 2px;
   cursor: pointer;
+}
+
+.modal > button:hover {
+  background-color: #ef4623;
 }
 
 @keyframes animate {
