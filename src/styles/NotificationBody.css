@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,600;0,700;1,800&display=swap');
+
+* {
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.App {
+  width: 90%;
+  margin: 20px;
+}
+
+.header {
+  /* border: 1px blue solid; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.header-container {
+  /* border: 1px blue solid; */
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: space-between;
+  color: #12376d;
+}
+
+.header-container > h1 {
+  padding-left: 10px;
+}
+
+.header-container > .header-right > h3 {
+  background-color: #12376d;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.header-container > .header-right > h3:hover {
+  background-color: #ef4623;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.body {
+  /* border: 1px pink solid; */
+  display: flex;
+  justify-content: center;
+  /* height: 80%; */
+}
+
+.notification-list {
+  /* border: 1px #12376d solid; */
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.indiviudal-notification {
+  border: 1px #12376d solid;
+  border-radius: 10px;
+  height: 200px;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.indiviudal-notification > h1 {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.indiviudal-notification:hover {
+  border: 1px #ef4623 solid;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.indiviudal-notification button {
+  padding: 13px 29px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background: crimson;
+  color: white;
+  cursor: pointer;
+}
+
+#portal .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.container .modal {
+  z-index: 1;
+  width: 350px;
+  height: 220px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  position: relative;
+  animation: animate 0.3s;
+}
+
+.modal button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  padding: 8px 11px;
+  background: crimson;
+  color: white;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
