@@ -1,13 +1,13 @@
 import React from 'react'
 import NotificationCard from './NotificationCard';
 
-const NotificationBody = ({ list }) => {
+const NotificationBody = ({ list, markReadStatus }) => {
   return (
     <div className='notification-list'>
       {
         list.map((l) => (
           <>
-            <NotificationCard notification={l}/>
+            <NotificationCard notification={l} markReadStatus={markReadStatus} />
           </>
         ))
       }
