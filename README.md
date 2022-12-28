@@ -33,3 +33,6 @@ Since the API have used up your local machine's default `localhost` port (ex: `l
 
 ### Responsive (when max-width: 500px) 👇
 <img width="502" alt="Screen Shot 2022-12-27 at 6 17 20 PM" src="https://user-images.githubusercontent.com/63900848/209746921-419318fd-5770-4af3-810e-49df065759b9.png">
+
+## Backend Application
+Repo Link: [resilia-takehome-api](https://github.com/mehmehmehlol/resilia-takehome-api)
