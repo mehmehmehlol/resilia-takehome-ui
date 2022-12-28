@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import Modal from './Modal'
-import axios from 'axios';
 
 const NotificationCard = ({ notification, markReadStatus }) => {
   const [showModal, setShowModal] = useState(false);
   const openModal = () => {
     setShowModal(!showModal);
   }
-  const convertDate = (str) => {
-    let d = new Date(str);
+  const convertDatetime = (str) => {
+    const d = new Date(str);
     return d.toUTCString();
   }
 
@@ -17,18 +16,10 @@ const NotificationCard = ({ notification, markReadStatus }) => {
     return str;
   }
 
-  // const markReadStatus = (id, status) => {
-  //   axios.patch(`${baseUrl}/notifications/${id}`, {
-  //     to_read: !status
-  //   })
-  //   .then(res => console.log(res))
-  //   .catch(error => console.log(error));
-  // }
-
   return (
     <div className="individual-notification" key={notification.id}>
       <h1>{notification.title}</h1>
-      <h3>{convertDate(notification.created_at)}</h3>
+      <h3>{convertDatetime(notification.created_at)}</h3>
       {
         notification.body.length > 100 ? 
         <>
@@ -38,12 +29,18 @@ const NotificationCard = ({ notification, markReadStatus }) => {
         :
         <p>{notification.body}</p>
       }
-      { 
-      notification.to_read ?
-        <button className="read-status-btn" onClick={() => markReadStatus(notification.id, notification.to_read)}>Make As Unread</button> :
-        <button className="read-status-btn" onClick={() => markReadStatus(notification.id, notification.to_read)}>Make As Read</button>
+      <button className="read-status-btn" onClick={() => markReadStatus(notification.id, notification.to_read)}>
+        {notification.to_read ? "Make As Unread" : "Make As Read"}
+      </button>
+      {
+        showModal && 
+        <Modal 
+          setShowModal={setShowModal} 
+          title={notification.title} 
+          body={notification.body} 
+          datetime={convertDatetime(notification.created_at)}
+        />
       }
-      {showModal ? <Modal setShowModal={setShowModal} title={notification.title} body={notification.body} /> : null}
     </div>
   )
 }

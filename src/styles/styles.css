@@ -10,17 +10,15 @@
 }
 
 .header {
-  /* border: 1px blue solid; */
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
 .header-container {
-  /* border: 1px blue solid; */
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 90%;
   justify-content: space-between;
   color: #12376d;
 }
@@ -44,14 +42,14 @@
 .body {
   display: flex;
   justify-content: center;
-  /* height: 80%; */
 }
 
 .notification-list {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  gap: 25px;
 }
 
 .individual-notification {
@@ -60,7 +58,7 @@
   border: 1px #12376d solid;
   border-radius: 10px;
   height: 300px;
-  width: 400px;
+  width: 30%;
   margin: 10px;
   gap: 12px;
 }

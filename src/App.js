@@ -10,21 +10,13 @@ function App() {
   const baseUrl = "http://localhost:3000"
   useEffect(() => {
     const fetchList = async() => {
-      const res = await fetch(`${baseUrl}/notifications`)
-      const resData = await res.json();
-      setList(resData);
+      const resData = await axios.get(`${baseUrl}/notifications`)
+      setList(resData.data);
     }
     fetchList();
-
-    const unreadStatus = () => {
-      let unread = list.filter(l => l.to_read === false);
-      console.log(list);
-      console.log(unread);
-      setUnreadLength(unread.length);
-    }
-    unreadStatus();
   }, [])
 
+  // update read status and update states to reflect the changes from db
   const markReadStatus = (id, status) => {
     axios.patch(`${baseUrl}/notifications/${id}`, {
       to_read: !status
@@ -51,14 +43,19 @@ function App() {
     })
   }
 
+  // retrieve the length of unread messages to be used in unread notification feature
+  const unreadStatus = () => {
+    let unread = list.filter(l => l.to_read === false);
+    return unread.length;
+  }
+
   return (
     <div className="App">
       <div className="header">
         <div className="header-container">
           <h1>Notification System</h1>
           <div className="header-right">
-            <h4>Notifications({unreadLength})</h4>
-            {/* <h3>Click me to initialize notification</h3> */}
+            <h4>Notifications({unreadStatus()})</h4>
           </div>
         </div>
       </div>

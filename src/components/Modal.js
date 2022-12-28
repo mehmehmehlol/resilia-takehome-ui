@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import ReactDom from 'react-dom';
 
-const Modal = ({ setShowModal, title, body }) => {
+const Modal = ({ setShowModal, title, body, datetime }) => {
   // close the modal when clicking outside the modal
   const modalRef = useRef();
   const closeModal = (e) => {
@@ -14,6 +14,7 @@ const Modal = ({ setShowModal, title, body }) => {
       <div className='modal'>
         <div className='container-content'>
           <h1>{title}</h1>
+          <h3>{datetime}</h3>
           <p>{body}</p>
         </div>
         <button onClick={() => setShowModal(false)}>x</button>
