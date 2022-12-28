@@ -5,8 +5,6 @@ import NotificationBody from './components/NotificationBody';
 
 function App() {
   const [list, setList] = useState([]);
-  const [unreadLength, setUnreadLength] = useState(0);
-
   const baseUrl = "http://localhost:3000"
   useEffect(() => {
     const fetchList = async() => {
