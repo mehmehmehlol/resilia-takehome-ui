@@ -18,29 +18,20 @@ function App() {
 
   // update read status and update states to reflect the changes from db
   const markReadStatus = (id, status) => {
+    const index = id - 1;
     axios.patch(`${baseUrl}/notifications/${id}`, {
       to_read: !status
     })
-    .then(res => console.log(res))
-    .catch(error => console.log(error));
-
-    if (status) {
-      setUnreadLength(unreadLength + 1)
-    } else {
-      setUnreadLength(unreadLength - 1)
-    }
-    setList(prevState => {
-      const newState = prevState.map(obj => {
-        if (obj.id === id) {
-          return {
-            ...obj,
-            to_read: !status
-          }
-        }
-        return obj;
-      })
-      return newState;
+    .then(res => {
+      const updatedData = res.data;
+      const updatedArray = [
+        ...list.slice(0, index),
+          updatedData,
+        ...list.slice(index + 1),
+      ];
+      setList(updatedArray);
     })
+    .catch(error => console.log(error));
   }
 
   // retrieve the length of unread messages to be used in unread notification feature

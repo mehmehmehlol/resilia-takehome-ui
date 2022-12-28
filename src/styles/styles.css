@@ -180,3 +180,26 @@
   }
 }
 
+@media (max-width: 500px) {
+  .header {
+    top: 0;
+    position: fixed;
+    z-index: 9999;
+    background-color: #ffffff;
+    width: 90%;
+    overflow: hidden;
+  }
+
+  .body {
+    margin-top: 130px;
+  }
+
+  .notification-list {
+    flex-direction: column;
+  }
+
+  .individual-notification {
+    width: 100%;
+  }
+}
+
